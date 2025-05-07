@@ -1,0 +1,271 @@
+/* ===== ESTILOS BASE ===== */
+/* Reset universal para eliminar márgenes y paddings predeterminados */
+* {
+  margin: 0;  /* Elimina todos los márgenes externos */
+  padding: 0; /* Elimina todos los rellenos internos */
+  box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho/alto */
+}
+
+/* Estilos generales del cuerpo del documento */
+body {
+  font-family: 'Montserrat', Arial, sans-serif; /* Define la familia tipográfica principal y fallbacks */
+  background-color: #0a0a0f; /* Fondo negro azulado oscuro */
+  color: #ffffff; /* Texto en color blanco */
+  line-height: 1.6; /* Interlineado de 1.6 para mejor legibilidad */
+}
+
+/* ===== HEADER ===== */
+/* Contenedor principal del encabezado */
+.container {
+  background-color: #16161d; /* Fondo oscuro ligeramente más claro que el body */
+  padding: 1.5rem 0; /* Relleno vertical de 1.5rem (24px) */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra sutil para efecto de elevación */
+  position: sticky; /* Hace que el header sea pegajoso */
+  top: 0; /* Se pega en la parte superior de la ventana */
+  z-index: 100; /* Asegura que el header esté por encima de otros elementos */
+}
+
+/* Contenedor interno para el contenido del header */
+.container-co {
+  display: flex; /* Usa flexbox para el layout */
+  justify-content: space-between; /* Distribuye el espacio entre logo y navegación */
+  align-items: center; /* Centra verticalmente los elementos */
+  max-width: 1200px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 0 2rem; /* Relleno horizontal de 2rem (32px) */
+}
+
+/* Estilos del logo */
+.logo {
+  font-size: 2rem; /* Tamaño grande para el logo */
+  font-weight: 600; /* Grosor de fuente semi-negrita */
+  color: #c0a062; /* Color dorado para el texto */
+  text-shadow: 0 0 10px rgba(192, 160, 98, 0.5); /* Sombra difuminada dorada */
+}
+
+/* ===== NAVEGACIÓN ===== */
+/* Contenedor del menú de navegación */
+.menu {
+  display: flex; /* Disposición en fila */
+  gap: 2rem; /* Espacio de 2rem entre elementos del menú */
+  list-style: none; /* Elimina los estilos de lista predeterminados */
+}
+
+/* Estilos de los enlaces del menú */
+.enlace {
+  color: #cccccc; /* Color gris claro para los enlaces */
+  font-weight: 500; /* Grosor de fuente medio */
+  padding: 0.5rem 0; /* Relleno vertical para hacer más clickable */
+  position: relative; /* Necesario para el pseudo-elemento ::after */
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+  font-size: 1.3rem; /* Tamaño de fuente aumentado */
+}
+
+/* Efecto hover para los enlaces */
+.enlace:hover {
+  color: #ec0909; /* Cambia a rojo al pasar el mouse */
+}
+
+/* Barra decorativa animada bajo los enlaces */
+.enlace::after {
+  content: ''; /* Necesario para pseudo-elementos */
+  position: absolute; /* Posición absoluta respecto al enlace */
+  bottom: 0; /* Alinea en la parte inferior */
+  left: 0; /* Comienza desde la izquierda */
+  width: 0; /* Inicialmente invisible (ancho 0) */
+  height: 2px; /* Altura de la barra */
+  background: #c0a062; /* Color dorado para la barra */
+  transition: width 0.3s ease; /* Animación suave del ancho */
+}
+
+/* Efecto hover para la barra decorativa */
+.enlace:hover::after {
+  width: 100%; /* La barra se expande al 100% del ancho */
+}
+
+/* ===== HERO SECTION ===== */
+/* Sección hero principal */
+.container3 {
+  min-height: 80vh; /* Altura mínima del 80% del viewport */
+  display: flex; /* Usa flexbox para centrar contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  /* Fondo con gradiente semitransparente sobre imagen de fondo */
+  background: linear-gradient(rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.8)), 
+              url('Imagenes/espada-laser-star-wars.webp') center/cover no-repeat;
+  /* center: centra la imagen | cover: cubre todo el espacio | no-repeat: evita repetición */
+  padding: 0 2rem; /* Relleno horizontal */
+}
+
+/* Contenedor del contenido hero */
+.contenido {
+  max-width: 1200px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centrado horizontal */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Título principal */
+.titulo {
+  font-size: 3.5rem; /* Tamaño de fuente muy grande */
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+  line-height: 1.2; /* Interlineado ajustado */
+  color: #c0a062; /* Color dorado */
+  font-weight: 500; /* Grosor de fuente medio */
+}
+
+/* Subtítulo */
+.subtitulo {
+  font-size: 1.2rem; /* Tamaño de fuente aumentado */
+  max-width: 600px; /* Ancho máximo para mejor legibilidad */
+  margin-bottom: 2.5rem; /* Espaciado inferior grande */
+  color: #cccccc; /* Color gris claro */
+}
+
+/* ===== BOTONES ===== */
+/* Estilo base para todos los botones */
+.boton {
+  display: inline-block; /* Permite dimensiones pero se comporta como inline */
+  padding: 0.8rem 2rem; /* Relleno generoso para mejor click */
+  border-radius: 4px; /* Esquinas ligeramente redondeadas */
+  font-weight: 500; /* Grosor de fuente medio */
+  text-align: center; /* Texto centrado */
+  cursor: pointer; /* Cambia el cursor a mano */
+  transition: all 0.3s ease; /* Transición suave para todos los cambios */
+  text-decoration: none; /* Elimina subrayado en enlaces */
+}
+
+/* Botón primario - Estilo destacado */
+.primario {
+  background-color: #c0a062; /* Fondo dorado */
+  color: #0a0a0f; /* Texto oscuro para contraste */
+  border: none; /* Sin borde */
+}
+
+/* Efecto hover para botón primario */
+.primario:hover {
+  background-color: #d4c29c; /* Color dorado más claro */
+  transform: translateY(-2px); /* Efecto de levitación (sube 2px) */
+  box-shadow: 0 0 10px rgba(192, 160, 98, 0.5); /* Sombra dorada */
+}
+
+/* Botón secundario - Estilo outline */
+.secundario {
+  background-color: transparent; /* Fondo transparente */
+  border: 1px solid #c0a062; /* Borde dorado */
+  color: #c0a062; /* Texto dorado */
+  margin-left: 1rem; /* Espaciado a la izquierda */
+}
+
+/* Efecto hover para botón secundario */
+.secundario:hover {
+  background-color: rgba(192, 160, 98, 0.1); /* Fondo dorado muy tenue */
+  color: #ffffff; /* Texto blanco */
+}
+
+/* ===== CARACTERÍSTICAS ===== */
+/* Sección de características */
+.carac {
+  padding: 5rem 2rem; /* Relleno generoso (5rem arriba/abajo) */
+  background-color: #16161d; /* Fondo oscuro */
+}
+
+/* Contenedor del título de sección */
+.titulose {
+  text-align: center; /* Texto centrado */
+  margin-bottom: 3rem; /* Espaciado inferior grande */
+}
+
+/* Estilo del título de sección */
+.titulose h2 {
+  font-size: 2rem; /* Tamaño grande */
+  color: #e0e0e0; /* Color gris claro */
+  margin-bottom: 1.2rem; /* Espaciado inferior */
+  padding-bottom: 0.5rem; /* Relleno inferior */
+  display: inline-block; /* Necesario para el borde inferior */
+  border-bottom: 1px solid #c0a062; /* Borde inferior dorado */
+}
+
+/* Grid contenedor de tarjetas */
+.container2 {
+  display: grid; /* Usa CSS Grid para el layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+  gap: 2rem; /* Espacio entre tarjetas */
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Tarjetas individuales */
+.tarjeta {
+  background-color: #24242e; /* Fondo gris oscuro */
+  padding: 2rem; /* Relleno interno generoso */
+  border-radius: 8px; /* Esquinas redondeadas */
+  text-align: center; /* Contenido centrado */
+  transition: all 0.3s ease; /* Transición suave para efectos hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Efecto hover para tarjetas */
+.tarjeta:hover {
+  transform: translateY(-10px); /* Efecto de levitación (sube 10px) */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+/* Iconos dentro de las tarjetas */
+.icono {
+  font-size: 2.5rem; /* Tamaño grande para iconos */
+  color: #c0a062; /* Color dorado */
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+
+/* Títulos de las tarjetas */
+.titulo-tarjeta {
+  font-size: 1.3rem; /* Tamaño aumentado */
+  margin-bottom: 1rem; /* Espaciado inferior */
+  color: #ffffff; /* Texto blanco */
+}
+
+/* Texto descriptivo en tarjetas */
+.texto {
+  color: #cccccc; /* Color gris claro */
+  font-size: 0.95rem; /* Tamaño ligeramente reducido */
+}
+
+/* ===== FOOTER ===== */
+/* Pie de página */
+.pie {
+  background-color: #16161d; /* Fondo oscuro */
+  padding: 3rem 2rem; /* Relleno generoso */
+  border-top: 1px solid #24242e; /* Borde superior sutil */
+}
+
+/* Grid para el layout del footer */
+.contenedor {
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado horizontal */
+  display: grid; /* Usa CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+  gap: 2rem; /* Espacio entre columnas */
+}
+
+/* Iconos de redes sociales */
+.icono {
+  width: 30px; /* Ancho fijo */
+  height: 30px; /* Alto fijo */
+  margin-right: 1rem; /* Espaciado a la derecha */
+  transition: transform 0.3s ease; /* Transición suave para efecto hover */
+}
+
+/* Efecto hover para iconos */
+.icono:hover {
+  transform: scale(1.1); /* Aumenta tamaño un 10% */
+}
+
+/* Sección de copyright */
+.copyright {
+  text-align: center; /* Texto centrado */
+  margin-top: 3rem; /* Espaciado superior grande */
+  padding-top: 2rem; /* Relleno superior */
+  border-top: 1px solid #24242e; /* Borde superior */
+  color: #cccccc; /* Color gris claro */
+  font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
